@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Blacklist configuration file.
+ */
+
+// Deny access to these usernames. Example: array('foobaruser').
+$config['blacklist_usernames'] = array();
+
+// Deny access to these IPs. Example: array('41.190.3.29').
+$config['blacklist_ips'] = array();
+
+// Deny access to these countries. Example: array('Nigeria').
+$config['blacklist_countries'] = array();
+
+// Log denied requests.
+$config['blacklist_log'] = true;
