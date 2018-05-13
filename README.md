@@ -58,8 +58,8 @@ Comments and suggestions are welcome!
 
 Email: [Diana Soares][dsoares]
 
-[rcplugrepo]: http://plugins.roundcube.net/packages/dsoares/blacklist
-[releases]: http://github.com/dsoares/roundcube-blacklist/releases
-[rcpluggeolocation]: http://github.com/dsoares/Roundcube-Plugin-Geolocation
-[gpl]: http://www.gnu.org/licenses/gpl.html
+[rcplugrepo]: https://plugins.roundcube.net/packages/dsoares/blacklist
+[releases]: https://github.com/dsoares/roundcube-blacklist/releases
+[rcpluggeolocation]: https://plugins.roundcube.net/packages/dsoares/geolocation
+[gpl]: https://www.gnu.org/licenses/gpl.html
 [dsoares]: mailto:diana.soares@gmail.com
