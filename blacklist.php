@@ -1,13 +1,14 @@
 <?php
 /**
- * Blacklist Roundcube Plugin
+ * Roundcube plugin blacklist
  *
  * Roundcube plugin to provide a generic access blacklist.
  *
+ * @version 0.1.1
  * @author Diana Soares
  * @requires geolocation
  *
- * Copyright (C) 2016 Diana Soares
+ * Copyright (C) 2016-2018 Diana Soares
  *
  * This program is a Roundcube (http://www.roundcube.net) plugin.
  * For more information see README.md.

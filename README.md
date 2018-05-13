@@ -1,5 +1,4 @@
-Roundcube Plugin Blacklist
-==========================
+# Roundcube plugin blacklist
 
 Roundcube plugin to provide a generic access blacklist.
 
@@ -7,19 +6,16 @@ The plugin can be configured to deny access to specific usernames, IPs or countr
 
 This is a useful plugin when users's passwords have been caught by spammers, but the administrators can not change the users's passwords (only the user may change it's own password).
 
-**NOTE:**
+Stable versions of this plugin are available from the [Roundcube plugin repository][rcplugrepo] (for 1.0 and above) or the [releases section][releases] of the GitHub repository.
 
-This is just a snapshot from the GIT repository and **MAY NOT BE A STABLE version of Blacklist**. It is Intended for use with the **GIT-master** version of Roundcube and it may not be compatible with older versions.
-Stable versions of Blacklist are available from the [Roundcube plugin repository][rcplugrepo] (for 1.0 and above) or the [releases section][releases] of the GitHub repository.
+## Requirements
 
-Requirements
-------------
-
-- [Roundcube Plugin Geolocation][rcpluggeolocation]
+- [Roundcube plugin geolocation][rcpluggeolocation]
 
 
-Installation with composer
-----------------------------------------
+## Installation
+
+#### With composer
 
 Add the plugin to your `composer.json` file:
 
@@ -30,18 +26,18 @@ Add the plugin to your `composer.json` file:
 
 And run `$ composer update [--your-options]`.
 
-Manual Installation
-----------------------------------------
+Copy `config.inc.php.dist` to `config.inc.php` and modify as necessary.
+
+#### Manual Installation
 
 Place this directory under your Rouncdube `plugins/` and enable blacklist
 plugin within the main Roundcube configuration file.
 
 Copy `config.inc.php.dist` to `config.inc.php` and modify as necessary.
 
-Please note that this plugin requires the [Roundcube Plugin Geolocation][rcpluggeolocation] to be enabled and properly working. Check the plugin instructions for more information.
+Please note that this plugin requires the [Roundcube plugin geolocation][rcpluggeolocation] to be enabled and properly working. Check the plugin instructions for more information.
 
-Configuration
-----------------------------------------
+## Configuration
 
 - **$config['blacklist_usernames']** - `array` of usernames to deny access.
 
@@ -52,20 +48,18 @@ Configuration
 - **$config['blacklist_log']** - `boolean`, if the plugin should log denied requests.
 
 
-License
-----------------------------------------
+## License
 
 This plugin is released under the [GNU General Public License Version 3+][gpl].
 
-Contact
-----------------------------------------
+## Contact
 
 Comments and suggestions are welcome!
 
 Email: [Diana Soares][dsoares]
 
 [rcplugrepo]: http://plugins.roundcube.net/packages/dsoares/blacklist
-[releases]: http://github.com/JohnDoh/Roundcube-Plugin-Blacklist/releases
+[releases]: http://github.com/dsoares/roundcube-blacklist/releases
 [rcpluggeolocation]: http://github.com/dsoares/Roundcube-Plugin-Geolocation
 [gpl]: http://www.gnu.org/licenses/gpl.html
 [dsoares]: mailto:diana.soares@gmail.com

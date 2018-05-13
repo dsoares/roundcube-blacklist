@@ -3,7 +3,8 @@
     "type": "roundcube-plugin",
     "description": "Roundcube plugin to provide a generic access blacklist.",
     "keywords": ["mail","security"],
-    "homepage": "https://github.com/dsoares/Roundcube-Plugin-Blacklist",
+    "homepage": "https://github.com/dsoares/roundcube-blacklist",
+    "version": "0.1.1",
     "license": "GPL-3.0+",
     "authors": [
         {
