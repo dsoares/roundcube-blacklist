@@ -37,7 +37,6 @@ class blacklist extends rcube_plugin
      */
     public function init()
     {
-        $this->require_plugin('geolocation');
         $this->add_hook('authenticate', array($this, 'authenticate'));
     }
 
@@ -51,6 +50,10 @@ class blacklist extends rcube_plugin
 
         foreach (array('usernames', 'ips', 'countries') as $i) {
             $blacklist[$i] = $rcmail->config->get('blacklist_'.$i, array());
+        }
+
+        if ($blacklist['countries']) {
+            $this->require_plugin('geolocation');
         }
 
         $username = $args['user'];

@@ -35,7 +35,9 @@ plugin within the main Roundcube configuration file.
 
 Copy `config.inc.php.dist` to `config.inc.php` and modify as necessary.
 
-Please note that this plugin requires the [Roundcube plugin geolocation][rcpluggeolocation] to be enabled and properly working. Check the plugin instructions for more information.
+Please note that this plugin requires the [Roundcube plugin geolocation][rcpluggeolocation]
+to be enabled and properly working if you add any country to the blacklist.
+Check the [geolocation][rcpluggeolocation] plugin instructions for more information.
 
 ## Configuration
 
