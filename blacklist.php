@@ -60,7 +60,8 @@ class blacklist extends rcube_plugin
             $ip = rcube_utils::remote_addr();
 
             if (!in_array($ip, $blacklist['ips'])) {
-                $geo = geolocation::get_instance()->get_geolocation($ip);
+                $geo = !empty($blacklist['countries'])
+                    ? geolocation::get_instance()->get_geolocation($ip) : false;
 
                 if ($geo === false or is_string($geo)
                     or !in_array($geo['country'], $blacklist['countries'])) {
