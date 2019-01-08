@@ -7,7 +7,8 @@
 // Deny access to these usernames. Example: array('foobaruser').
 $config['blacklist_usernames'] = array();
 
-// Deny access to these IPs. Example: array('41.190.3.29').
+// Deny access to these IPs and/or networks in CIDR notation.
+// Example: array('41.190.3.29', '41.190.3.0/24').
 $config['blacklist_ips'] = array();
 
 // Deny access to these countries. Example: array('Nigeria').

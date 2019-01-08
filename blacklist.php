@@ -62,17 +62,21 @@ class blacklist extends rcube_plugin
         if (!in_array($username, $blacklist['usernames'])) {
             $ip = rcube_utils::remote_addr();
 
-            if (!in_array($ip, $blacklist['ips'])) {
-                $geo = !empty($blacklist['countries'])
-                    ? geolocation::get_instance()->get_geolocation($ip) : false;
-
-                if ($geo === false or is_string($geo)
-                    or !in_array($geo['country'], $blacklist['countries'])) {
-                    return $args;
+            foreach ($blacklist['ips'] as $cidr) {
+                if ($this->cidr_match($ip, $cidr)) {
+                    break;
                 }
-
-                $country = (is_array($geo) ? $geo['country'] : '');
             }
+
+            $geo = !empty($blacklist['countries'])
+                ? geolocation::get_instance()->get_geolocation($ip) : false;
+
+            if ($geo === false or is_string($geo)
+                or !in_array($geo['country'], $blacklist['countries'])) {
+                return $args;
+            }
+
+            $country = (is_array($geo) ? $geo['country'] : '');
         }
 
         if ($rcmail->config->get('blacklist_log', true)) {
@@ -85,5 +89,22 @@ class blacklist extends rcube_plugin
 
         $args['abort'] = true;
         return $args;
+    }
+
+    /**
+     * Check the client IP against a value in CIDR notation.
+     */
+    private function cidr_match($ip, $cidr)
+    {
+        if (strpos($cidr, '/') === false) {
+            $cidr .= '/32';
+        }
+
+        list($subnet, $bits) = explode('/', $cidr);
+        $ip = ip2long($ip);
+        $subnet = ip2long($subnet);
+        $mask = -1 << (32 - $bits);
+        $subnet &= $mask; # nb: in case the supplied subnet wasn't correctly aligned
+        return ($ip & $mask) == $subnet;
     }
 }

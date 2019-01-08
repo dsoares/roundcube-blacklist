@@ -2,15 +2,15 @@
 
 Roundcube plugin to provide a generic access blacklist.
 
-The plugin can be configured to deny access to specific usernames, IPs or countries. It is not meant to be configured by users, only by the Roundcube Webmail administrator via configuration file.
+The plugin can be configured to deny access to specific usernames, IPs, networks in CIDR notation or countries. It is not meant to be configured by users, only by the Roundcube Webmail administrator via configuration file.
 
 This is a useful plugin when users's passwords have been caught by spammers, but the administrators can not change the users's passwords (only the user may change it's own password).
 
-Stable versions of this plugin are available from the [Roundcube plugin repository][rcplugrepo] (for 1.0 and above) or the [releases section][releases] of the GitHub repository.
+Stable versions of this plugin are available from the [Roundcube plugin repository][rcplugrepo] or the [releases section][releases] of the GitHub repository.
 
 ## Requirements
 
-- [Roundcube plugin geolocation][rcpluggeolocation]
+- [Roundcube plugin geolocation][rcpluggeolocation] if you configure to deny access to any country.
 
 
 ## Installation
@@ -21,7 +21,7 @@ Add the plugin to your `composer.json` file:
 
     "require": {
         (...)
-        "dsoares/blacklist": ">=0.1"
+        "dsoares/blacklist": "~0.1"
     }
 
 And run `$ composer update [--your-options]`.
@@ -43,7 +43,7 @@ Check the [geolocation][rcpluggeolocation] plugin instructions for more informat
 
 - **$config['blacklist_usernames']** - `array` of usernames to deny access.
 
-- **$config['blacklist_ips']** - `array` of IPs to deny access.
+- **$config['blacklist_ips']** - `array` of IPs and networks in CIDR notation to deny access.
 
 - **$config['blacklist_countries']** - `array` of countries to deny access.
 
