@@ -4,7 +4,7 @@
  *
  * Roundcube plugin to provide a generic access blacklist.
  *
- * @version 0.1.2
+ * @version 0.1.3
  * @author Diana Soares
  * @requires geolocation
  *
