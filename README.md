@@ -8,36 +8,35 @@ This is a useful plugin when users's passwords have been caught by spammers, but
 
 Stable versions of this plugin are available from the [Roundcube plugin repository][rcplugrepo] or the [releases section][releases] of the GitHub repository.
 
+
 ## Requirements
 
-- [Roundcube plugin geolocation][rcpluggeolocation] if you configure to deny access to any country.
+- [Roundcube plugin geolocation][rcpluggeolocation] if you configure to deny access by country.
 
 
 ## Installation
 
 #### With composer
 
-Add the plugin to your `composer.json` file:
+1. Go to your Roundcube root directory.
 
-    "require": {
-        (...)
-        "dsoares/blacklist": "~0.1"
-    }
+2. Run `$ composer require dsoares/blacklist`.
 
-And run `$ composer update [--your-options]`.
+3. Copy `config.inc.php.dist` to `config.inc.php` and modify as necessary.
 
-Copy `config.inc.php.dist` to `config.inc.php` and modify as necessary.
 
 #### Manual Installation
 
-Place this directory under your Rouncdube `plugins/` and enable blacklist
-plugin within the main Roundcube configuration file.
+Place this directory (named blacklist) under your Rouncdube `plugins/`
+and enable blacklist plugin within the main Roundcube configuration file.
 
 Copy `config.inc.php.dist` to `config.inc.php` and modify as necessary.
 
-Please note that this plugin requires the [Roundcube plugin geolocation][rcpluggeolocation]
-to be enabled and properly working if you add any country to the blacklist.
+Please note that if you want to block access by country in the configuration file,
+this plugin requires the [Roundcube plugin geolocation][rcpluggeolocation]
+to be enabled and properly working.
 Check the [geolocation][rcpluggeolocation] plugin instructions for more information.
+
 
 ## Configuration
 
